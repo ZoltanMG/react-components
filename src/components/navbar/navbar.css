@@ -4,109 +4,160 @@ body {
     margin: 0;
 }
 
-input#menu {
+#menu, .icon {
     display: none;
 }
 
-.icon {
-    background: #FFF;
-    cursor: pointer;
-    display: flex;
-    height: 60px;
-    padding: 16px;
-    width: 60px;
-}
-
-label.icon {
-    position: fixed;
-    z-index: 200;
-}
-
-.icon .menu,
-.icon .menu::before,
-.icon .menu::after {
-    background: #7f888d;
-    content: '';
-    display: block;
-    height: 4px;
-    position: absolute;
-    transition: background ease .15s, top ease .15s .15s, transform ease .15s;
-    width: 30px;
-    border-radius: 4px;
-}
-
-.icon:hover .menu,
-.icon:hover .menu::before,
-.icon:hover .menu::after {
-    background: #353535;
-}
-
-.icon .menu {
-    left: 18px;
-    top: 27px;
-}
-
-.icon .menu::before {
-    top: -9px;
-}
-
-.icon .menu::after {
-    top: 9px;
-}
-
-#menu:checked + .icon .menu {
-    background: transparent;
-}
-
-#menu:checked + .icon .menu::before {
-    transform: rotate(45deg);
-}
-
-#menu:checked + .icon .menu::after {
-    transform: rotate(-45deg);
-}
-
-#menu:checked + .icon .menu::before,
-#menu:checked + .icon .menu::after {
-    top: 0;
-    transition: top ease .15s, transform ease .15s .15s;
-}
-
-nav {
+.nav {
     background: #FFF;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
     height: 60px;
-    padding-top: 60px;
-    position: fixed;
-    transition: height ease .4s;
     width: 100%;
-    z-index: 100;
-    
-    overflow: hidden;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10%;
 }
 
-#menu:checked ~ nav {
-    height: 100%;
-}
-
-nav ul {
+.nav ul {
+    display: flex;
     list-style: none;
-    margin: 0;
-    padding: 0;
-}
-nav li {
-    cursor: pointer;
-    display: block;
-    line-height: 60px;
-    padding-left: 16px;
-    white-space: nowrap;
-}
-nav i {
-    color: #9FB1BD;
-    margin-right: 24px;
-    vertical-align: text-bottom;
+    width: 45%;
+    justify-content: space-between;
 }
 
 .invisible {
-    height: 10vh;
+    height: 60px;
 }
+
+.material-icons, .navBrand a{
+    text-decoration: none;
+    color: #353535;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 950px) {
+
+    input#menu {
+        display: none;
+    }
+
+    .navBrand {
+        display: none;
+    }
+
+    .nav {
+        padding: 0;
+    }
+
+    .nav ul {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav ul li{
+        border-bottom: solid 1px grey;
+    }
+    
+    .icon {
+        background: #FFF;
+        cursor: pointer;
+        display: flex;
+        height: 60px;
+        padding: 16px;
+        width: 60px;
+    }
+    
+    label.icon {
+        position: fixed;
+        z-index: 200;
+    }
+    
+    .icon .menu,
+    .icon .menu::before,
+    .icon .menu::after {
+        background: #7f888d;
+        content: '';
+        display: block;
+        height: 4px;
+        position: absolute;
+        transition: background ease .15s, top ease .15s .15s, transform ease .15s;
+        width: 30px;
+        border-radius: 4px;
+    }
+    
+    .icon:hover .menu,
+    .icon:hover .menu::before,
+    .icon:hover .menu::after {
+        background: #353535;
+    }
+    
+    .icon .menu {
+        right: 18px;
+        top: 27px;
+    }
+    
+    .icon .menu::before {
+        top: -9px;
+    }
+    
+    .icon .menu::after {
+        top: 9px;
+    }
+    
+    #menu:checked + .icon .menu {
+        background: transparent;
+    }
+    
+    #menu:checked + .icon .menu::before {
+        transform: rotate(45deg);
+    }
+    
+    #menu:checked + .icon .menu::after {
+        transform: rotate(-45deg);
+    }
+    
+    #menu:checked + .icon .menu::before,
+    #menu:checked + .icon .menu::after {
+        top: 0;
+        transition: top ease .15s, transform ease .15s .15s;
+    }
+    
+    .nav {
+        background: #FFF;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+        height: 60px;
+        padding-top: 60px;
+        position: fixed;
+        transition: height ease .4s;
+        width: 100%;
+        z-index: 100;
+        display: block;
+        overflow: hidden;
+    }
+    
+    #menu:checked ~ .nav {
+        height: 100%;
+    }
+    
+    .nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .nav li {
+        cursor: pointer;
+        display: block;
+        line-height: 60px;
+        padding-left: 16px;
+        white-space: nowrap;
+    }
+    .nav i {
+        color: #9FB1BD;
+        margin-right: 24px;
+        vertical-align: text-bottom;
+    }
+
+  }

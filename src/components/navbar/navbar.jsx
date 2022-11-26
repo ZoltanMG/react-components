@@ -8,28 +8,29 @@ function Navbar() {
             <label htmlFor="menu" className="icon">
                 <div className="menu"></div>
             </label>
-            <nav>
+            <nav className='nav'>
+                <div className='navBrand'>
+                    <a href="/">Brand</a>
+                </div>
                 <ul>
                     <li>
-                        <i className="material-icons">A</i>Grade A
+                        <a href="/" className="material-icons">Home</a>
                     </li>
                     <li>
-                        <i className="material-icons">B</i>Grade B
+                        <a href="/" className="material-icons">About</a>
                     </li>
                     <li>
-                        <i className="material-icons">C</i>Grade C
+                        <a href="/" className="material-icons">Portafolio</a>
                     </li>
                     <li>
-                        <i className="material-icons">D</i>Grade D
+                        <a href="/" className="material-icons">Servicios</a>
                     </li>
                     <li>
-                        <i className="material-icons">E</i>Grade E
+                        <a href="/" className="material-icons">Contacto</a>
                     </li>
                 </ul>
             </nav>
-            <div className='invisible'>
-
-            </div>
+            <div className='invisible'></div>
         </>
     );
 }
